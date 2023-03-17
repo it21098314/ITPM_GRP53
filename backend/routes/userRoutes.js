@@ -15,6 +15,7 @@ router.post('/signup', async (req, res) => {
   }
 })
 
+
 //login
 
 router.post('/login', async (req, res) => {
@@ -27,6 +28,7 @@ router.post('/login', async (req, res) => {
   }
 })
 
+
 //get user
 
 router.get('/', async (req, res) => {
@@ -37,6 +39,7 @@ router.get('/', async (req, res) => {
     res.status(400).send(e.message);
   }
 })
+
 module.exports = router;
 
 //get a user
@@ -50,7 +53,9 @@ router.get('/:id', async (req, res) => {
     res.status(400).send(e.message);
   }
 })
+
 module.exports = router;
+
 
 // get user orders
 
@@ -63,7 +68,9 @@ router.get('/:id/orders', async (req, res) => {
     res.status(400).send(e.message);
   }
 })
+
 // update user notifcations
+
 router.post('/:id/updateNotifications', async (req, res) => {
   const { id } = req.params;
   try {

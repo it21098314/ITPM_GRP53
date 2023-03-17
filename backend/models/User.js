@@ -6,17 +6,22 @@ const UserSchema = mongoose.Schema({
   name: {
     type: String,
     required: [true, 'is required']
+
   },
 
   bdate: {
     type: String,
     required: [true, 'is required']
+
   },
 
   address: {
     type: String,
     required: [true, 'is required']
+ 
   },
+
+
 
   email: {
     type: String,
@@ -31,15 +36,18 @@ const UserSchema = mongoose.Schema({
     }
   },
 
+
   password: {
     type: String,
     required: [true, 'is required']
   },
 
+
   isAdmin: {
     type: Boolean,
     default: false
   },
+
 
   cart: {
     type: Object,
@@ -49,15 +57,18 @@ const UserSchema = mongoose.Schema({
     }
   },
 
+
   feedbacks: {
     type: Array,
     default: []
   },
 
+
   notifications: {
     type: Array,
     default: []
   },
+
 
   orders: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Order' }]
 
@@ -104,6 +115,7 @@ UserSchema.pre('save', function (next) {
 UserSchema.pre('remove', function (next) {
   this.model('Order').remove({ owner: this._id }, next);
 })
+
 
 const User = mongoose.model('User', UserSchema);
 
