@@ -7,6 +7,8 @@ const ProductSchema = mongoose.Schema({
   description: {
     type: String,
     required: [true, "description can't be blank"]
+
+
   },
   price: {
     type: String,
@@ -18,6 +20,7 @@ const ProductSchema = mongoose.Schema({
   },
   pictures: {
     type: Array,
+
     required: true
   }
 }, {minimize: false});

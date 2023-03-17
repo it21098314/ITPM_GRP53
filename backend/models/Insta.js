@@ -5,6 +5,7 @@ let instaSchema = new Schema({
   I_id: {
     type : String,
     required: true
+
  },
  I_name: {
     type : String,
@@ -13,6 +14,8 @@ let instaSchema = new Schema({
  I_email: {
      type : String,
      required: true
+
+     
   },
  I_address: {
      type : String,

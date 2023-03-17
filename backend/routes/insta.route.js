@@ -30,6 +30,7 @@ router.route('/').get((req, res) => {
 })
 
 // Get Single grade
+
 router.route('/edit-insta/:id').get((req, res) => {
  instaSchema.findById(req.params.id, (error, data) => {
     if (error) {
