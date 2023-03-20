@@ -20,9 +20,9 @@ const User = require('./models/User');
 const userRoutes = require('./routes/userRoutes');
 const productRoutes = require('./routes/productRoutes');
 const feedbackRoutes = require("./routes/feedbackRoutes");
-const imageRoutes = require('./routes/imageRoutes')
+const imageRoutes = require('./routes/imageRoutes');
 const orderRoutes = require('./routes/orderRoutes');
-const instaRoute = require('./routes/insta.route')
+const instaRoute=require('./routes/insta.route');
 //const gradeRoute = require('./routes/grade.route')
  app.use(cors());
 app.use(express.urlencoded({extended: true}));
@@ -32,7 +32,7 @@ app.use('/products', productRoutes);
 app.use('/images', imageRoutes);
 app.use("/feedbacks", feedbackRoutes);
 app.use('/orders', orderRoutes);
-app.use('/instas', instaRoute )
+app.use('/instas',instaRoute);
 //app.use('/grades', gradeRoute)
 
 //Stripe payments
