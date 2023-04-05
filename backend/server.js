@@ -23,8 +23,11 @@ const feedbackRoutes = require("./routes/feedbackRoutes");
 const imageRoutes = require('./routes/imageRoutes');
 const orderRoutes = require('./routes/orderRoutes');
 const instaRoute=require('./routes/insta.route');
+const OrderMangement = require('./routes/ordermangementRoutes');
+
 //const gradeRoute = require('./routes/grade.route')
- app.use(cors());
+
+app.use(cors());
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 app.use('/users', userRoutes);
@@ -33,6 +36,7 @@ app.use('/images', imageRoutes);
 app.use("/feedbacks", feedbackRoutes);
 app.use('/orders', orderRoutes);
 app.use('/instas',instaRoute);
+app.use('/ordermanage',OrderMangement);
 //app.use('/grades', gradeRoute)
 
 //Stripe payments
