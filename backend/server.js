@@ -24,6 +24,7 @@ const imageRoutes = require('./routes/imageRoutes');
 const orderRoutes = require('./routes/orderRoutes');
 const instaRoute=require('./routes/insta.route');
 const OrderMangement = require('./routes/ordermangementRoutes');
+const BlogRoute = require('./routes/blogRoutes');
 //const gradeRoute = require('./routes/grade.route')
 const donationRoute = require('./routes/donation.route');
 
@@ -40,6 +41,7 @@ app.use("/feedbacks", feedbackRoutes);
 app.use('/orders', orderRoutes);
 app.use('/instas',instaRoute);
 app.use('/ordermanage',OrderMangement);
+app.use('/blogs',BlogRoute);
 //app.use('/grades', gradeRoute)
 app.use('/donations',donationRoute);
 
