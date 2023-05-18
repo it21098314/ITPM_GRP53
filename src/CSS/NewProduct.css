@@ -51,3 +51,10 @@
     background-position: center;
     height: 100vh;
 }
+.new-Donation__image--container {
+    background-image: url(https://res.cloudinary.com/dvcfip5fe/image/upload/v1682057598/donation_cuh72b.png);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    
+}
