@@ -1,0 +1,40 @@
+.footer {
+    background-color: #262626;
+    padding: 10px 0;
+  }
+  
+  .footer h4 {
+    margin-bottom: 15px;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .footer ul li {
+    margin-bottom: 5px;
+  }
+  
+  .footer ul li a {
+    color: #ffffff;
+  }
+  
+  .social-icons li {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 18px;
+  }
+  
+  .social-icons li a {
+    color: #ffffff;
+    transition: all 0.3s ease;
+  }
+  
+  .social-icons li a:hover {
+    color: #ffd400;
+  }
+  
+  .text-muted {
+    color: #ffffff;
+    margin-top: 15px;
+  }
+  
