@@ -5,7 +5,8 @@ import "../CSS/Navigation.css";
 import { LinkContainer } from "react-router-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { logout, resetNotifications } from "../features/userSlice";
-import logo from "./LOGO.jpg";
+import logo from "./LOGO.png";
+
 import { useNavigate } from "react-router-dom";
 
 function Navigation() {
@@ -38,13 +39,27 @@ function handleToggleNotifications() {
     <Navbar bg="light" expand="lg">
       <Container>
         <LinkContainer to="/">
-          <img src={logo} alt="Logo" width={110} height={110} />
+          <img src={logo} alt="Logo" width={250} height={150} />
         </LinkContainer>
 
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
             {/* if no user*/}
+             {/* About Us */}
+            <LinkContainer to="/about">
+              <Nav.Link>About Us</Nav.Link>
+            </LinkContainer>
+
+            {/* Contact Us */}
+            <LinkContainer to="/contact">
+              <Nav.Link>Contact Us</Nav.Link>
+            </LinkContainer>
+
+             {/* Contact Us */}
+             <LinkContainer to="/blog">
+              <Nav.Link>Blogs</Nav.Link>
+            </LinkContainer>
 
             {!user && (
               <LinkContainer to="/login">
@@ -53,6 +68,7 @@ function handleToggleNotifications() {
             )}
                
             {user && !user.isAdmin && (
+              
      <LinkContainer to="/cart">
      <Nav.Link>
        <i className="fas fa-shopping-cart"></i>
@@ -63,6 +79,10 @@ function handleToggleNotifications() {
        )}
      </Nav.Link>
    </LinkContainer>
+
+                            
+
+
             )}
 
             {/* if user*/}
@@ -71,6 +91,40 @@ function handleToggleNotifications() {
               <Nav.Link style={{ position: "relative" }} onClick={handleToggleNotifications}>
                                     <i className="fas fa-bell" ref={bellRef} data-count={unreadNotifications || null}></i>
                                 </Nav.Link>
+               
+            {/* Donation button in user and admin */}
+             <NavDropdown title='Donations' id="basic-nav-dropdown">
+
+                   {user.isAdmin ? (
+                  <>
+                    <LinkContainer to="/Donation-list">
+                      <NavDropdown.Item>Donations</NavDropdown.Item>
+                    </LinkContainer>
+                     
+
+
+                  </>
+                ) : (
+                  <>
+                    <LinkContainer to="/create-donation">
+                      <NavDropdown.Item>CreateDonation</NavDropdown.Item>
+                    </LinkContainer>
+                    <LinkContainer to="/Donation-Ulist">
+                      <NavDropdown.Item>Donation List</NavDropdown.Item>
+                    </LinkContainer>
+                     
+
+
+                  
+
+                    
+                  </>
+                )}
+                    
+                    </NavDropdown>                
+
+                   {/* userand admin dropdown button  */}               
+
               <NavDropdown title={`${user.email}`} id="basic-nav-dropdown">
                 {user.isAdmin ? (
                   <>
@@ -81,8 +135,10 @@ function handleToggleNotifications() {
                       <NavDropdown.Item>Feedbacks</NavDropdown.Item>
                     </LinkContainer>
                     <LinkContainer to="/new-product">
-                      <NavDropdown.Item>Create Product</NavDropdown.Item>
+                      <NavDropdown.Item>Create Course</NavDropdown.Item>
                     </LinkContainer>
+
+
                   </>
                 ) : (
                   <>
@@ -101,6 +157,10 @@ function handleToggleNotifications() {
                     <LinkContainer to="/feedbacks/add">
                       <NavDropdown.Item>PostFeedback</NavDropdown.Item>
                     </LinkContainer>
+
+
+                    
+
 
 
                     
@@ -137,8 +197,6 @@ function handleToggleNotifications() {
                     ))
                 ) : (
                     <p>No notifcations yet</p>
-
-                    
                 )}
             </div>
     </Navbar>
